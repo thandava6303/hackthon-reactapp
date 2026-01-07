@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enterprise Design System - Professional Corporate Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Enterprise Blue */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Corporate Blue */
+    --primary: 217 91% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 35%;
+    --primary-light: 217 91% 95%;
+
+    /* Secondary - Professional Slate */
+    --secondary: 215 20% 95%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted - Subtle backgrounds */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Teal for actions */
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 173 80% 95%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 95%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 97%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+    --info-light: 199 89% 95%;
+
+    /* UI Elements */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 40%;
+    --radius: 0.5rem;
+
+    /* Sidebar - Enterprise Navigation */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 222 47% 20%;
+    --sidebar-ring: 217 91% 60%;
+    --sidebar-muted: 222 47% 15%;
+
+    /* Table & Data */
+    --table-header: 210 20% 96%;
+    --table-row-hover: 217 91% 98%;
+    --table-border: 214 32% 91%;
+
+    /* Chart Colors */
+    --chart-1: 217 91% 40%;
+    --chart-2: 173 80% 40%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 142 76% 36%;
+    --chart-5: 280 65% 60%;
+    --chart-6: 199 89% 48%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 40%) 0%, hsl(217 91% 30%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(173 80% 40%) 0%, hsl(173 80% 30%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(222 47% 13%) 0%, hsl(222 47% 8%) 100%);
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 217 91% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 50%;
+    --primary-light: 217 91% 15%;
+
+    --secondary: 215 20% 15%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 217 32% 15%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 173 80% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 173 80% 15%;
+
+    --success: 142 76% 40%;
+    --success-light: 142 76% 15%;
+
+    --warning: 38 92% 55%;
+    --warning-light: 38 92% 15%;
+
+    --destructive: 0 84% 55%;
+    --destructive-light: 0 84% 15%;
+
+    --info: 199 89% 50%;
+    --info-light: 199 89% 15%;
+
+    --border: 217 32% 20%;
+    --input: 217 32% 20%;
+    --ring: 217 91% 55%;
+
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-border: 222 47% 15%;
+
+    --table-header: 222 47% 12%;
+    --table-row-hover: 217 91% 12%;
+    --table-border: 217 32% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Enterprise Card Styles */
+  .card-enterprise {
+    @apply bg-card rounded-lg border border-border;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+  .card-enterprise:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Data Table Styles */
+  .table-enterprise {
+    @apply w-full text-sm;
+  }
+
+  .table-enterprise thead {
+    @apply bg-[hsl(var(--table-header))] sticky top-0 z-10;
+  }
+
+  .table-enterprise th {
+    @apply px-4 py-3 text-left font-semibold text-foreground/80 uppercase text-xs tracking-wider;
+  }
+
+  .table-enterprise tbody tr {
+    @apply border-b border-[hsl(var(--table-border))] transition-colors;
+  }
+
+  .table-enterprise tbody tr:hover {
+    @apply bg-[hsl(var(--table-row-hover))];
+  }
+
+  .table-enterprise td {
+    @apply px-4 py-3;
+  }
+
+  /* Status Badge Styles */
+  .badge-status {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply bg-[hsl(var(--success-light))] text-[hsl(var(--success))];
+  }
+
+  .badge-warning {
+    @apply bg-[hsl(var(--warning-light))] text-[hsl(var(--warning))];
+  }
+
+  .badge-destructive {
+    @apply bg-[hsl(var(--destructive-light))] text-[hsl(var(--destructive))];
+  }
+
+  .badge-info {
+    @apply bg-[hsl(var(--info-light))] text-[hsl(var(--info))];
+  }
+
+  /* Sidebar Navigation */
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-foreground/80 transition-all duration-200;
+  }
+
+  .sidebar-nav-item:hover {
+    @apply bg-sidebar-accent text-sidebar-foreground;
+  }
+
+  .sidebar-nav-item.active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground font-medium;
+  }
+
+  /* Widget Card */
+  .widget-card {
+    @apply bg-card rounded-xl border border-border p-6;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .widget-card-header {
+    @apply flex items-center justify-between mb-4;
+  }
+
+  .widget-card-title {
+    @apply text-sm font-medium text-muted-foreground uppercase tracking-wider;
+  }
+
+  .widget-card-value {
+    @apply text-3xl font-bold text-foreground;
+  }
+
+  /* Form Styles */
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-1.5;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all;
+  }
+
+  .form-error {
+    @apply text-destructive text-sm mt-1;
+  }
+
+  /* Loading States */
+  .skeleton-pulse {
+    @apply bg-muted animate-pulse rounded;
+  }
+
+  /* Offline Banner */
+  .offline-banner {
+    @apply fixed top-0 left-0 right-0 bg-warning text-warning-foreground py-2 px-4 text-center text-sm font-medium z-50;
+  }
+
+  /* Virtualized Table Row */
+  .virtual-row {
+    @apply flex items-center border-b border-[hsl(var(--table-border))];
+  }
+
+  .virtual-row:hover {
+    @apply bg-[hsl(var(--table-row-hover))];
+  }
+
+  /* Monospace for IDs/Codes */
+  .font-mono-data {
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-sm;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Focus Ring */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* Truncate with Tooltip */
+  .truncate-tooltip {
+    @apply truncate max-w-[200px];
+  }
+}
